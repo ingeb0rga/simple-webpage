@@ -21,4 +21,4 @@ steps:
     azureSubscription: 'Trial (20e9da58-4e8e-4e10-9645-4231c6f01be5)'
     appType: 'webAppLinux'
     WebAppName: 'devopsspirtdev'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(build.sourcesDirectory)/**/*.zip'
