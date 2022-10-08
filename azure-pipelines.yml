@@ -15,20 +15,21 @@ steps:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-# - task: PublishBuildArtifacts@1
-# - task: AzureRmWebAppDeployment@4
-#   inputs:
-#     ConnectionType: 'AzureRM'
-#     azureSubscription: 'Trial (20e9da58-4e8e-4e10-9645-4231c6f01be5)'
-#     appType: 'webAppLinux'
-#     WebAppName: 'devopsspirtdev'
-#     packageForLinux: '$(build.sourcesDirectory)/**/*.zip'
-- task: CmdLine@2
+- task: PublishBuildArtifacts@1
+- task: AzureRmWebAppDeployment@4
   inputs:
-    script: |
-      pwd
-      cd $(build.sourcesDirectory)
-      pwd
-      cd $(Build.ArtifactStagingDirectory)
-      pwd
-      # ls -la *.zip
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Trial (20e9da58-4e8e-4e10-9645-4231c6f01be5)'
+    appType: 'webAppLinux'
+    WebAppName: 'devopsspirtdev'
+    packageForLinux: '$(build.ArtifactStagingDirectory)/*.zip'
+
+# - task: CmdLine@2
+#   inputs:
+#     script: |
+#       pwd
+#       cd $(build.sourcesDirectory)
+#       pwd
+#       cd $(Build.ArtifactStagingDirectory)
+#       pwd
+#       # ls -la *.zip
