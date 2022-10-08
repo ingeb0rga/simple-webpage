@@ -28,3 +28,4 @@ steps:
       pwd
       cd $(build.sourcesDirectory)
       pwd
+      ls -la $(build.sourcesDirectory)/**/*.zip
