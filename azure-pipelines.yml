@@ -29,4 +29,6 @@ steps:
       pwd
       cd $(build.sourcesDirectory)
       pwd
-      ls -la /home/vsts/work/1/a/*.zip
+      cd $(Build.ArtifactStagingDirectory)
+      pwd
+      # ls -la *.zip
